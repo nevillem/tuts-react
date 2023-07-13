@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const BlogIist = ({blogs, title, handleDelete}) => {
     // const blog= props.blogs;
     // const title= props.title;
@@ -10,8 +12,10 @@ const BlogIist = ({blogs, title, handleDelete}) => {
          {
         blogs.map((blog)=>(
         <div className="blog-preview" key={blog.id}>
+            <Link to={`/blogs/${blog.id}`}>
             <h2>{blog.title}</h2>
             <p>Written by { blog.author }</p>
+            </Link>
             <button onClick={()=>handleDelete(blog.id)}>Delete blog</button>
         </div>
         ))
