@@ -3,6 +3,7 @@ import Home from './Home';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Create from './create';
 import BlogDetails from './BlogDetails';
+import NotFound from './NotFound';
 
 function App() {
   // const title="welcome to the new blog";
@@ -18,7 +19,7 @@ function App() {
         <Route path="/create" element={<Create />} />
         <Route path="/blogs/:id" element={<BlogDetails />} />
           {/* Error route */}
-      {/* <Route path="*" element={<NotFound />} /> */}
+      <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
 
